@@ -12,12 +12,10 @@ import java.util.List;
 public class ProductService {
 
     @Autowired
-    private ProductRepo repo;
+    ProductRepo repo;
 
     public List<Product> getAllProducts() {
-
         return repo.findAll();
-
     }
 
     public Product getProductById(int id) {
