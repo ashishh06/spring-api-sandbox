@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class User {
 
@@ -30,7 +29,5 @@ public class User {
 
     @Column(nullable = false)
     private boolean isAdmin;
-
-
 
 }
