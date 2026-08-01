@@ -24,7 +24,7 @@ public class LoginController {
 
         try {
             return loginService.loginUser(user.getUsername(),user.getPassword());
-             return ResponseEntity.ok("User login successful!"+user.getUsername());
+//             return ResponseEntity.ok("User login successful!"+user.getUsername());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of("error", "Error: " + e.getMessage()));
         }
