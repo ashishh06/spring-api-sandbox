@@ -13,7 +13,7 @@ const RegisterPage = () => {
         setMessage("");
 
         try {
-            await axios.post("http://localhost:8080/api/register", {
+            await axios.post("http://localhost:8080/api/registerUser", {
                 username,
                 password,
             });
