@@ -18,13 +18,13 @@ public class AdminController {
     @Autowired
     public AdminService adminService;
 
-    @GetMapping("/blocked")
+    @GetMapping("/admin/blocked")
     public ResponseEntity<List<User>> getBlockedUsers() {
         List<User> blockedUsers = adminService.getBlockedUsers();
         return ResponseEntity.ok(blockedUsers);
     }
 
-    @PutMapping("/unblock/{userId}")
+    @PutMapping("/admin/unblock/{userId}")
     public ResponseEntity<String> unblockUser(@PathVariable int userId){
         adminService.unblockUser(userId);
         return ResponseEntity.ok("User unblocked successfully!");

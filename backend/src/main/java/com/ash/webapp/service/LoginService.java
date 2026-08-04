@@ -41,7 +41,7 @@ public class LoginService {
         }
 
         if (user.isAdmin()) {
-            if (!user.getPassword().equals(password)) {
+            if (!passwordEncoder.matches(password, user.getPassword())) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error", "Invalid admin credentials!"));
             }
         }
