@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/admin")
 public class AdminController {
 
     @Autowired
     public AdminService adminService;
 
-    @GetMapping("/admin/blocked")
+    @GetMapping("/blocked")
     public ResponseEntity<List<User>> getBlockedUsers() {
         List<User> blockedUsers = adminService.getBlockedUsers();
         return ResponseEntity.ok(blockedUsers);
     }
 
-    @PutMapping("/admin/unblock/{userId}")
+    @PutMapping("/unblock/{userId}")
     public ResponseEntity<String> unblockUser(@PathVariable int userId){
         adminService.unblockUser(userId);
         return ResponseEntity.ok("User unblocked successfully!");
